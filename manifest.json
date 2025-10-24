@@ -1,0 +1,15 @@
+{
+  "name": "كنوز الأرض - Earth Treasures",
+  "short_name": "كنوز الأرض",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#006644",
+  "icons": [
+    {
+      "src": "icons/emerald.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

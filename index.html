@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>كنوز الأرض | Earth Treasures</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <img src="icons/emerald.svg" alt="logo" class="logo">
+        <div class="titles"><h1>كنوز الأرض</h1><small>Earth Treasures</small></div>
+      </div>
+      <div class="controls">
+        <select id="lang" aria-label="language">
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+        <div class="currency">
+          <label><input type="checkbox" id="show-dzd"> د.ج</label>
+          <label><input type="checkbox" id="show-usd" checked> $</label>
+        </div>
+        <button id="cart-btn">السلة (<span id="count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2 data-i18n="heroTitle">اختَر جوهرتك بعناية</h2>
+      <p data-i18n="heroSubtitle">قطع مختارة وموثوقة مع معلومات ميدانية لكل عينة</p>
+    </section>
+
+    <section id="products" class="grid"></section>
+
+    <aside id="cart" class="panel hidden">
+      <h3 data-i18n="cart">السلة</h3>
+      <div id="items"></div>
+      <div class="cart-footer">
+        <div><strong data-i18n="total">المجموع:</strong> <span id="total">$0</span> &nbsp; <span id="total-dzd">0 د.ج</span></div>
+        <div class="cart-actions">
+          <button id="checkout" class="primary" data-i18n="checkout">الدفع</button>
+          <button id="clear" class="secondary" data-i18n="clear">تفريغ</button>
+        </div>
+      </div>
+    </aside>
+
+    <section id="checkout-modal" class="modal hidden">
+      <div class="modal-box">
+        <button id="close" class="close">×</button>
+        <h3 data-i18n="checkoutTitle">الدفع وإتمام الطلب</h3>
+        <form id="form">
+          <label data-i18n="name">الاسم الكامل</label><input name="name" required>
+          <label data-i18n="email">البريد الإلكتروني</label><input name="email" type="email" required>
+          <label data-i18n="phone">الهاتف</label><input name="phone" required>
+          <label data-i18n="address">عنوان الشحن</label><input name="address" required>
+          <div class="form-row">
+            <label>سعر الصرف USD → DZD</label><input id="rate" value="140" type="number" step="0.01">
+          </div>
+          <p class="gdpr" data-i18n="gdpr">بتأكيد الطلب توافق على معالجة بياناتك الشخصية لغرض إكمال الطلب ووفق سياسة الخصوصية.</p>
+          <div class="form-actions"><button type="submit" class="primary" data-i18n="place">ادفع الآن</button><button id="cancel" type="button" class="secondary" data-i18n="cancel">إلغاء</button></div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 كنوز الأرض – Earth Treasures</p>
+        <p>تواصل معنا: <a href="tel:+213561014714">+213 561 014 714</a> • <a href="mailto:fouadmeliani99@gmail.com">fouadmeliani99@gmail.com</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <div id="viewer" class="viewer hidden"><button id="vclose">×</button><img id="vimg" src=""></div>
+
+  <script src="cart.js"></script>
+</body>
+</html>
